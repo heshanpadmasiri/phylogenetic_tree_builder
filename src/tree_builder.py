@@ -2,6 +2,7 @@ from Bio import Phylo
 from Bio.Phylo.TreeConstruction import DistanceCalculator
 from Bio.Phylo.TreeConstruction import DistanceTreeConstructor
 from Bio import AlignIO
+import matplotlib.pyplot as plt
 import argparse
 
 
@@ -29,6 +30,8 @@ if __name__ == '__main__':
                         default=False)
     args = parser.parse_args()
     tree = build_tree(args.alignment_file)
+    output_name = args.alignment_file.strip('_alignment.fasta')
     if not args.silent:
-        Phylo.draw_ascii(tree)
-    to_nexus_file(tree, args.alignment_file.strip('_alignment.fasta'))
+        Phylo.draw(tree, do_show=False)
+        plt.savefig(f'{output_name}.png')
+    to_nexus_file(tree, output_name)
