@@ -17,9 +17,8 @@ jobs:
       run: mkdir -p output
     - name: Make
       run: make
-    - name: Commit changes
-        uses: EndBug/add-and-commit@v7
-        with:
-          author_name: github-actions
-          author_email: 41898282+github-actions[bot]@users.noreply.github.com
-          message: 'automatic build commit'
+    - uses: EndBug/add-and-commit@v7
+      with:
+        author_name: github-actions
+        author_email: 41898282+github-actions[bot]@users.noreply.github.com
+        message: 'automatic build commit'
