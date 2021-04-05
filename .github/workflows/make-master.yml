@@ -14,7 +14,7 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt
     - name: Make output directory
-      run: mkdir output
+      run: mkdir -p output
     - name: Make
       run: make
     - name: Commit changes
