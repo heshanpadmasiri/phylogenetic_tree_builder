@@ -1,0 +1,8 @@
+#NEXUS
+Begin Taxa;
+ Dimensions NTax=3;
+ TaxLabels NZ_CP023657.1 NZ_CP022699.1 NZ_CP014692.1;
+End;
+Begin Trees;
+ Tree tree1=(NZ_CP023657.1:0.32256,(NZ_CP022699.1:0.13953,NZ_CP014692.1:0.13953)Inner1:0.18303)Inner2:0.00000;
+End;
