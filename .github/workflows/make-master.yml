@@ -13,5 +13,13 @@ jobs:
         architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
     - name: Install dependencies
       run: pip install -r requirements.txt
+    - name: Make output directory
+      run: mkdir output
     - name: Make
       run: make
+    - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: github-actions
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: 'automatic build commit'
