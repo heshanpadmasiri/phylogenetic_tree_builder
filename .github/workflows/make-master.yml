@@ -1,8 +1,6 @@
 name: make-master
 
-on:
-  push:
-    - master
+on: [push]
 
 jobs:
   build:
