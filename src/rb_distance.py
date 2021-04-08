@@ -28,9 +28,11 @@ def __file_name_extraction__()->dict:
 def build_dataframe():
     trees = __file_name_extraction__()
     tree_names = list(trees.keys())
+    df = pd.DataFrame()
+    df['-'] = tree_names 
     for left in tree_names:
-        for right in tree_names:
-            print(left, right, distance(trees[left], trees[right]))
+        df[left] = df['-'].map(lambda right: distance(trees[left], trees[right]))
+    df.to_csv('output/tree_cmp.csv', index=False)
 
 if __name__ == '__main__':
     build_dataframe()
